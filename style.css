@@ -1,0 +1,283 @@
+/* Import Tailwind CSS */
+@import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Roboto:wght@300;400;500;700&display=swap');
+
+/* Global styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(0, 245, 212, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(255, 0, 110, 0.1) 0%, transparent 20%),
+        linear-gradient(145deg, #0a1128 0%, #1b263b 100%);
+    color: #e2e8f0;
+    min-height: 100vh;
+    transition: all 0.5s ease;
+}
+
+/* Light theme */
+body.light-theme {
+    background:
+        radial-gradient(circle at 10% 20%, rgba(0, 245, 212, 0.05) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(255, 0, 110, 0.05) 0%, transparent 20%),
+        linear-gradient(145deg, #f0f4f8 0%, #dfe7ef 100%);
+    color: #2d3748;
+}
+
+/* Sidebar Container */
+[data-testid="stSidebar"] {
+    background: rgba(11, 15, 41, 0.85) !important;
+    backdrop-filter: blur(12px);
+    border-right: 1px solid rgba(0, 245, 212, 0.15);
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+body.light-theme [data-testid="stSidebar"] {
+    background: rgba(240, 244, 248, 0.9) !important;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar Navigation Items */
+.st-emotion-cache-1oe5cao {
+    padding: 0.5rem 1rem !important;
+    margin: 0.25rem 0 !important;
+    border-radius: 0.5rem !important;
+    transition: all 0.3s ease !important;
+}
+
+.st-emotion-cache-1oe5cao:hover {
+    background: linear-gradient(90deg, rgba(0, 245, 212, 0.2) 0%, transparent 100%) !important;
+    transform: translateX(5px) !important;
+}
+
+.st-emotion-cache-1oe5cao p {
+    font-family: 'Orbitron', sans-serif !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.5px !important;
+}
+
+body.light-theme .st-emotion-cache-1oe5cao:hover {
+    background: linear-gradient(90deg, rgba(0, 245, 212, 0.1) 0%, transparent 100%) !important;
+}
+
+/* Active Navigation Item */
+.st-emotion-cache-1oe5cao:has(.st-emotion-cache-1n1tjoh) {
+    background: linear-gradient(90deg, rgba(0, 245, 212, 0.3) 0%, transparent 100%) !important;
+    border-left: 3px solid #00f5d4 !important;
+}
+
+/* Sidebar Header */
+.sidebar-header {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #00f5d4, #ff006e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+    margin: 1.5rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 245, 212, 0.3);
+    text-shadow: 0 0 15px rgba(0, 245, 212, 0.3);
+    letter-spacing: 1px;
+}
+
+/* Glassmorphism card - Enhanced */
+.card.glass {
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(12px);
+    border-radius: 1.25rem;
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+    border: 1px solid rgba(0, 245, 212, 0.15);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 0 20px rgba(0, 245, 212, 0.05);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card.glass::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 245, 212, 0.1) 0%, transparent 70%);
+    transform: rotate(30deg);
+    z-index: -1;
+}
+
+.card.glass:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 12px 40px rgba(0, 245, 212, 0.25),
+        inset 0 0 30px rgba(0, 245, 212, 0.1);
+    border-color: rgba(0, 245, 212, 0.3);
+}
+
+.card.glass h1,
+.card.glass h2,
+.card.glass h3 {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(90deg, #00f5d4, #a0e7ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+/* Info and alert boxes - Enhanced */
+.info-box,
+.alert-box {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(8px);
+    border-left: 4px solid;
+    padding: 1.75rem;
+    border-radius: 0.85rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.info-box {
+    border-left-color: #00f5d4;
+    background: linear-gradient(90deg, rgba(0, 245, 212, 0.1) 0%, rgba(15, 23, 42, 0.8) 50%);
+}
+
+.alert-box {
+    border-left-color: #ff006e;
+    background: linear-gradient(90deg, rgba(255, 0, 110, 0.1) 0%, rgba(15, 23, 42, 0.8) 50%);
+    animation: pulse 2.5s infinite;
+}
+
+/* Buttons - Enhanced */
+.download-btn,
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #00f5d4, #0099ff);
+    color: #0a1128;
+    padding: 0.85rem 1.75rem;
+    border-radius: 0.75rem;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 245, 212, 0.3);
+}
+
+.download-btn::before,
+.theme-toggle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff006e, #0099ff);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.download-btn:hover,
+.theme-toggle:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 245, 212, 0.4);
+}
+
+.download-btn:hover::before,
+.theme-toggle:hover::before {
+    opacity: 1;
+}
+
+/* Inputs - Enhanced */
+.stTextInput>div>input,
+.stSelectbox>div>select,
+.stNumberInput>div>input {
+    background: rgba(30, 41, 59, 0.8) !important;
+    border: 1px solid rgba(0, 245, 212, 0.3) !important;
+    color: #e2e8f0 !important;
+    border-radius: 0.75rem !important;
+    padding: 0.85rem 1rem !important;
+    font-size: 0.95rem !important;
+    transition: all 0.3s ease !important;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+.stTextInput>div>input:focus,
+.stSelectbox>div>select:focus,
+.stNumberInput>div>input:focus {
+    border-color: #ff006e !important;
+    box-shadow:
+        inset 0 2px 4px rgba(0, 0, 0, 0.2),
+        0 0 0 3px rgba(255, 0, 110, 0.2) !important;
+    outline: none !important;
+}
+
+/* Plotly charts - Enhanced */
+.plotly-graph-div {
+    border-radius: 1.25rem;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 245, 212, 0.15);
+    background: rgba(15, 23, 42, 0.7);
+}
+
+/* Animations */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 0, 110, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 0, 110, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 0, 110, 0);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card.glass {
+        padding: 1.75rem;
+        border-radius: 1rem;
+    }
+
+    .sidebar-header {
+        font-size: 1.6rem;
+        margin: 1rem 0;
+    }
+
+    [data-testid="stSidebar"] {
+        width: 240px !important;
+    }
+}
